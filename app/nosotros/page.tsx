@@ -13,7 +13,7 @@ const photos = [
 export default function Page() {
   return (
     <div className="">
-      <div className="bg-surface py-16 text-center">
+      <div className="bg-surface px-4 py-16 text-center">
         <p className="text-xs uppercase tracking-[0.22em] text-brand">Aguascalientes</p>
         <h1 className="mt-3 font-display text-5xl">Conócenos</h1>
         <p className="mx-auto mt-4 max-w-2xl text-muted">
@@ -36,7 +36,7 @@ export default function Page() {
       <section className="bg-surface py-14">
         <div className="mx-auto max-w-[1440px] px-4 text-center md:px-8">
           <h2 className="font-display text-3xl">Han confiado en nosotros</h2>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-10">
+          <div className="client-logos mt-8 flex flex-wrap items-center justify-center gap-10">
             {clients.map((item) => (
               <img key={item.name} src={item.logo} alt={item.name} className="h-14 w-auto object-contain" />
             ))}

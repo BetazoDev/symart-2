@@ -1,8 +1,33 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { company } from "@/lib/data";
+
+function FooterBlock({
+  title,
+  className = "",
+  level = "h5",
+  children,
+}: {
+  title: string;
+  className?: string;
+  level?: "h3" | "h5";
+  children: ReactNode;
+}) {
+  const [open, setOpen] = useState(false);
+  const Heading = level;
+  return (
+    <div className={`footer-col-block ${className} ${open ? "open" : ""}`}>
+      <Heading className="footer-heading text_white footer-heading-mobile">
+        <button type="button" className="footer-heading-toggle" onClick={() => setOpen((value) => !value)}>
+          {title}
+        </button>
+      </Heading>
+      <div className="tf-collapse-content">{children}</div>
+    </div>
+  );
+}
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -17,28 +42,22 @@ export function Footer() {
               <div className="footer-left">
                 <div className="footer-infor flex-grow-1">
                   <div className="footer-menu">
-                    <div className="footer-col-block">
-                      <h5 className="footer-heading text_white footer-heading-mobile">Información</h5>
-                      <div className="tf-collapse-content">
-                        <ul className="footer-menu-list">
-                          <li className="text-body-default"><Link className="link footer-menu_item" href="/nosotros">Nosotros</Link></li>
-                          <li className="text-body-default"><Link className="link footer-menu_item" href="/blog">Blog</Link></li>
-                          <li className="text-body-default"><Link className="link footer-menu_item" href="/tienda">Tienda</Link></li>
-                          <li className="text-body-default"><Link className="link footer-menu_item" href="/contacto">Contacto</Link></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="footer-col-block">
-                      <h5 className="footer-heading text_white footer-heading-mobile">Servicio</h5>
-                      <div className="tf-collapse-content">
-                        <ul className="footer-menu-list">
-                          <li className="text-body-default"><Link className="link footer-menu_item" href="/cotizar">Cotizar</Link></li>
-                          <li className="text-body-default"><Link className="link footer-menu_item" href="/carrito">Carrito</Link></li>
-                          <li className="text-body-default"><Link className="link footer-menu_item" href="/favoritos">Lista de deseos</Link></li>
-                          <li className="text-body-default"><Link className="link footer-menu_item" href="/cuenta">Mi cuenta</Link></li>
-                        </ul>
-                      </div>
-                    </div>
+                    <FooterBlock title="Información">
+                      <ul className="footer-menu-list">
+                        <li className="text-body-default"><Link className="link footer-menu_item" href="/nosotros">Nosotros</Link></li>
+                        <li className="text-body-default"><Link className="link footer-menu_item" href="/blog">Blog</Link></li>
+                        <li className="text-body-default"><Link className="link footer-menu_item" href="/tienda">Tienda</Link></li>
+                        <li className="text-body-default"><Link className="link footer-menu_item" href="/contacto">Contacto</Link></li>
+                      </ul>
+                    </FooterBlock>
+                    <FooterBlock title="Servicio">
+                      <ul className="footer-menu-list">
+                        <li className="text-body-default"><Link className="link footer-menu_item" href="/cotizar">Cotizar</Link></li>
+                        <li className="text-body-default"><Link className="link footer-menu_item" href="/carrito">Carrito</Link></li>
+                        <li className="text-body-default"><Link className="link footer-menu_item" href="/favoritos">Lista de deseos</Link></li>
+                        <li className="text-body-default"><Link className="link footer-menu_item" href="/cuenta">Mi cuenta</Link></li>
+                      </ul>
+                    </FooterBlock>
                   </div>
                   <div className="footer-phone-number">
                     <h4 className="text_white number">
@@ -50,9 +69,7 @@ export function Footer() {
                   </div>
                 </div>
               </div>
-              <div className="footer-col-block footer-newsletter">
-                <h3 className="footer-heading footer-heading-mobile text_white">Recibe novedades de la fábrica</h3>
-                <div className="tf-collapse-content">
+              <FooterBlock title="Recibe novedades de la fábrica" className="footer-newsletter" level="h3">
                   <form
                     className="form-newsletter subscribe-form"
                     onSubmit={(event) => {
@@ -95,8 +112,7 @@ export function Footer() {
                       </a>
                     </li>
                   </ul>
-                </div>
-              </div>
+              </FooterBlock>
             </div>
           </div>
         </div>

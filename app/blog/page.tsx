@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Blog" };
 export default function Page() {
   return (
     <div className="">
-      <div className="bg-surface py-12 text-center">
+      <div className="bg-surface px-4 py-12 text-center">
         <h1 className="font-display text-4xl md:text-5xl">Blog</h1>
       </div>
       <div className="mx-auto grid max-w-[1440px] gap-8 px-4 py-12 md:grid-cols-3 md:px-8">

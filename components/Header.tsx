@@ -45,7 +45,7 @@ export function Header() {
             <div className="row wrapper-header align-items-center">
               <div className="col-xl-3 col-2 d-xl-none">
                 <button type="button" className="mobile-menu" aria-label="Menú" onClick={() => setMenuOpen(true)}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill={overlay ? "#fff" : "#000"} viewBox="0 0 256 256">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#181818" viewBox="0 0 256 256">
                     <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z" />
                   </svg>
                 </button>
@@ -169,6 +169,15 @@ export function Header() {
             <div className="mb-body">
               <ul className="nav-ul-mb">
                 <li className="nav-mb-item">
+                  <button
+                    type="button"
+                    className="mb-menu-link"
+                    onClick={() => { setMenuOpen(false); setSearchOpen(true); }}
+                  >
+                    Buscar
+                  </button>
+                </li>
+                <li className="nav-mb-item">
                   <Link className="mb-menu-link" href="/tienda" onClick={() => setMenuOpen(false)}>Tienda</Link>
                 </li>
                 {categories.map((item) => (
@@ -185,6 +194,12 @@ export function Header() {
                     </Link>
                   </li>
                 ))}
+                <li className="nav-mb-item">
+                  <Link className="mb-menu-link" href="/favoritos" onClick={() => setMenuOpen(false)}>Lista de deseos</Link>
+                </li>
+                <li className="nav-mb-item">
+                  <Link className="mb-menu-link" href="/cuenta" onClick={() => setMenuOpen(false)}>Mi cuenta</Link>
+                </li>
               </ul>
               <div className="mb-other-content">
                 <div className="mb-notice">

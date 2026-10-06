@@ -23,7 +23,7 @@ export default function Page() {
 
   return (
     <div className="">
-      <div className="bg-surface py-12 text-center">
+      <div className="bg-surface px-4 py-12 text-center">
         <h1 className="font-display text-4xl">Cuenta</h1>
         <p className="mt-2 text-sm text-muted">El acceso real se conectará al backend. Este demo solo recuerda el correo en el navegador.</p>
       </div>

@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Cotizar" };
 export default function Page() {
   return (
     <div className="">
-      <div className="bg-surface py-12 text-center">
+      <div className="bg-surface px-4 py-12 text-center">
         <h1 className="font-display text-4xl md:text-5xl">Solicita tu cotización</h1>
         <p className="mx-auto mt-3 max-w-xl text-sm text-muted">
           Completa el formulario y recibe una propuesta para tu mobiliario. Si no tienes planos, se agenda una visita.

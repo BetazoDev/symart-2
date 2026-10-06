@@ -29632,6 +29632,240 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 420px;
   }
 }
+
+/* Responsive: logo, tarjetas, banner y ficha en anchos de teléfono */
+.footer-heading-toggle,
+button.mb-menu-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  width: 100%;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .logo-header {
+    width: auto;
+    max-width: 100%;
+  }
+  .logo-header .logo.logo-symart,
+  .header-default.header-bg.header-fixed .logo-header .logo.logo-symart {
+    height: auto;
+    max-height: 40px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .symart-thumbs.thumbs-slider {
+    flex-direction: column !important;
+  }
+  .symart-thumbs .tf-product-media-main,
+  .symart-thumbs .tf-product-media-thumbs {
+    width: 100%;
+  }
+  .symart-thumbs .tf-product-media-thumbs { order: 2; }
+  .symart-thumbs .tf-product-media-main { order: 1; }
+  .symart-thumbs .swiper-wrapper {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .symart-thumbs .tf-product-media-thumbs .swiper-slide {
+    width: 72px;
+    flex: 0 0 72px;
+  }
+  footer { margin-bottom: 0; }
+  footer .footer-col-block.open .tf-collapse-content { display: block; }
+  .footer-heading-toggle { cursor: pointer; }
+}
+
+@media (min-width: 992px) {
+  .footer-heading-toggle { pointer-events: none; }
+}
+
+@media (max-width: 610px) {
+  .collection-position.style-full .content {
+    width: calc(100% - 24px);
+    max-width: 100%;
+  }
+  .collection-position.style-full .content .cls-heading,
+  .collection-position.style-full .content p {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 575px) {
+  .page-title .paralaximg { min-height: 200px; }
+  .text-display { font-size: 40px; line-height: 46px; }
+  .card-product .btn-main-product {
+    letter-spacing: 0;
+    font-size: 11px;
+    padding: 0 6px;
+  }
+  .tf-shop-control { gap: 8px; }
+}
+
+@media (max-width: 340px) {
+  .tf-grid-layout.tf-col-2 {
+    grid-template-columns: 1fr;
+  }
+  .card-product .btn-main-product {
+    font-size: 12px;
+    letter-spacing: 0.4px;
+  }
+  .symart-thumbs .tf-product-media-thumbs .swiper-slide {
+    width: 64px;
+    flex: 0 0 64px;
+  }
+}
+
+/* Teléfono: el texto no puede salir del marco ni tapar la sección de al lado */
+@media (max-width: 767px) {
+  .collection-position.style-full {
+    display: block;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+  .collection-position.style-full .img-style {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    min-height: 100%;
+  }
+  .collection-position.style-full .content {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    width: auto;
+    max-width: none;
+    padding: 48px 16px;
+  }
+  .collection-position.style-full .content .cls-heading,
+  .collection-position.style-full .content h3,
+  .collection-position.style-full .content p {
+    white-space: normal;
+  }
+  .tf-sw-testimonial.sw-button-bottom-right .wrap-button {
+    position: static;
+    right: auto;
+    bottom: auto;
+    margin-top: 16px;
+    justify-content: flex-start;
+  }
+  .collection-position.style-3 .img-style,
+  .collection-position.style-3 .img-style img {
+    min-height: 280px;
+    height: 280px;
+  }
+  .cls-lookbook > .img-style img {
+    min-height: 0;
+  }
+  .section-lookbook {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .tf-slideshow.style-3 .box-content {
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    gap: 16px;
+    bottom: auto;
+  }
+  .tf-slideshow.style-3 .box-content .box-title p {
+    white-space: normal;
+  }
+  .tf-product-info-list .tf-product-info-by-btn {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 48px;
+    align-items: stretch;
+  }
+  .tf-product-info-list .wg-quantity {
+    width: 100%;
+    grid-column: 1 / -1;
+  }
+  .tf-product-info-list .tf-product-info-by-btn .tf-btn {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 48px;
+    white-space: normal;
+    text-align: center;
+    padding: 8px 12px;
+  }
+  .tf-breadcrumb-list {
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+  .widget-tabs.style-1 .widget-menu-tab {
+    justify-content: flex-start;
+    gap: 16px;
+    padding-bottom: 12px;
+  }
+  .page-title .content .title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  footer a,
+  footer h4,
+  footer h5 {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 575px) {
+  .tf-shop-control {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+  .tf-shop-control .tf-control-sorting,
+  .tf-shop-control .tf-control-layout {
+    justify-content: flex-start;
+  }
+  .tf-dropdown-sort .btn-select {
+    max-width: 100%;
+  }
+  .tf-dropdown-sort .text-sort-value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .heading-section.style-2 {
+    flex-wrap: wrap;
+  }
+  .collection-position.style-2.spacing-2 .content {
+    margin: 0 12px;
+    bottom: 16px;
+  }
+  .collection-position.style-2.spacing-2 .content p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .symart-iconrow {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .text-display {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .modal-shopping-cart .modal-content,
+  .modal-quick-view .modal-content {
+    max-width: calc(100% - 16px) !important;
+  }
+}
+
 .logo-header .logo-wordmark {
   font-family: var(--font-marcellus), "Marcellus", serif;
   font-size: 28px;
@@ -29648,4 +29882,11 @@ h1, h2, h3, h4, h5, h6 {
   border: 0;
   padding: 0;
   cursor: pointer;
+}
+
+.client-logos img {
+  height: 56px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
 }
