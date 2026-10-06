@@ -39,6 +39,7 @@ export function Header() {
 
   return (
     <>
+      {home ? <div className="space-1" /> : null}
       <header id="header" className={headerClass}>
         <div className={`main-header ${home ? "has-border-y" : ""}`}>
           <div className="container-full">

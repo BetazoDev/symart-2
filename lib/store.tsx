@@ -66,14 +66,18 @@ function commit(next: Persisted) {
 
 function subscribe(listener: () => void) {
   listeners.add(listener);
+  if (!loaded) {
+    loaded = true;
+    queueMicrotask(() => {
+      const next = load();
+      snapshot = next;
+      listeners.forEach((item) => item());
+    });
+  }
   return () => listeners.delete(listener);
 }
 
 function getClientSnapshot() {
-  if (!loaded) {
-    snapshot = load();
-    loaded = true;
-  }
   return snapshot;
 }
 
